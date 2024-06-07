@@ -159,6 +159,8 @@ if __name__ == "__main__":
             
             anno_list.append(item)
 
+    # Remove duplicates in img_list
+    img_list = [dict(t) for t in {tuple(sorted(d.items())) for d in img_list}]
 
     out_annos={}
     out_annos['images']=img_list
